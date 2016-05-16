@@ -2,6 +2,10 @@
 
 Vegan Passport to download and print for free - Wordpress Theme working with [Polylang](http://polylang.pro)
 
+> The Vegan Passport contains the idea of non-violence by helping people to communicate their ethical diet requirements worldwide. The Vegan Passport is an Open Source Project and belongs to everybody. Free to access, translate and collaborate for everybody.
+
+[Johann Schröder ](http://johannschroeder.com), Creator of [VeganPassport.com ](http://veganpassport.com)
+
 * Project: [github.com/johannschroeder/veganpassport](https://github.com/johannschroeder/veganpassport)
 * Website: [veganpassport.com](http://veganpassport.com)
 * Twitter: [@veganpassport](http://twitter.com/veganpassport)
