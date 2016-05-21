@@ -11,7 +11,7 @@ Vegan Passport to download and print for free - Wordpress Theme working with [Po
 * Twitter: [@veganpassport](http://twitter.com/veganpassport)
 * Author : [Johann Schröder](http://johannschroeder.com) // [Johann Schröder](mailto:mail@johannschroeder.com)
 
-## Getting Started with HTML5 Blank
+## Getting Started!
 
 Get the Vegan Passport as PDF or print directly from [veganpassport.com](http://veganpassport.com)
 
