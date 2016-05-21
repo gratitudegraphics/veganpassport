@@ -50,25 +50,46 @@ class Passport
 		$this->pdf->SetFont($this->cfg['FontBold'], '', 16);
 		$this->pdf->AddPage();
 
-		#$this->pdf->setRTL(true);
-
 		$this->pdf->RoundedRect($this->cfg['PagePaddingLeft'], $this->cfg['PagePaddingTop'], 178, 10, 2, '1111', null, $this->cfg['RedRoundedBox'], null);
 
-		$this->pdf->SetXY($this->cfg['PagePaddingLeft'], $this->cfg['PagePaddingTop']);
-		$this->pdf->SetFont('icomoon', '', 16);
-		$this->pdf->SetTextColor($this->cfg['Red'][0], $this->cfg['Red'][1], $this->cfg['Red'][2]);
-		$this->pdf->setFontSpacing(-0.2);
-		$this->pdf->Write(10, ' c ', null, null, 'L');
-		//$this->pdf->Cell(10, 10, 'c', 0, 0, 'C');
-		$this->pdf->SetTextColor(0,0,0);
-		$this->pdf->SetFont($this->cfg['FontRegular'], '', 13);
-		//$this->pdf->Cell(null, 10, 'PRINT. TURN PAPER. PRINT AGAIN. CUT OUT 4 PASSES AND SHARE WITH YOUR FELLOWS.', 0, 0, 'L');
-		$this->pdf->Write(10, mb_strtoupper(pll__('Please-print', 'Please-print')), null, null, 'L');
+		if (pll_current_language() == "ar" || pll_current_language() == "he") {
+			$this->pdf->setRTL(true);
 
-		$this->FrontPage($this->cfg['PagePaddingLeft'], $this->cfg['PagePaddingTop']+16);
-		$this->BackPage($this->cfg['PagePaddingLeft']+90, $this->cfg['PagePaddingTop']+16);
-		$this->BackPage($this->cfg['PagePaddingLeft'], $this->cfg['PagePaddingTop']+125+16+2);
-		$this->FrontPage($this->cfg['PagePaddingLeft']+90, $this->cfg['PagePaddingTop']+125+16+2);
+			$this->pdf->SetXY($this->cfg['PagePaddingLeft'], $this->cfg['PagePaddingTop']);
+			$this->pdf->SetFont('icomoon', '', 16);
+			$this->pdf->SetTextColor($this->cfg['Red'][0], $this->cfg['Red'][1], $this->cfg['Red'][2]);
+			$this->pdf->setFontSpacing(-0.2);
+			$this->pdf->Write(10, ' c ', null, null, 'R');
+			$this->pdf->SetTextColor(0,0,0);
+			$this->pdf->SetFont($this->cfg['FontRegular'], '', 13);
+			$this->pdf->Write(10, mb_strtoupper(pll__('Please-print', 'Please-print')), null, null, 'R');
+
+			$this->BackPage($this->cfg['PagePaddingLeft'], $this->cfg['PagePaddingTop']+16);
+			$this->FrontPage($this->cfg['PagePaddingLeft']+90, $this->cfg['PagePaddingTop']+16);
+			$this->FrontPage($this->cfg['PagePaddingLeft'], $this->cfg['PagePaddingTop']+125+16+2);
+			$this->BackPage($this->cfg['PagePaddingLeft']+90, $this->cfg['PagePaddingTop']+125+16+2);
+		} else {
+
+			$this->pdf->SetXY($this->cfg['PagePaddingLeft'], $this->cfg['PagePaddingTop']);
+			$this->pdf->SetFont('icomoon', '', 16);
+			$this->pdf->SetTextColor($this->cfg['Red'][0], $this->cfg['Red'][1], $this->cfg['Red'][2]);
+			$this->pdf->setFontSpacing(-0.2);
+			$this->pdf->Write(10, ' c ', null, null, 'L');
+			$this->pdf->SetTextColor(0,0,0);
+			$this->pdf->SetFont($this->cfg['FontRegular'], '', 13);
+			$this->pdf->Write(10, mb_strtoupper(pll__('Please-print', 'Please-print')), null, null, 'L');
+
+			if (pll_current_language() == "lt") {
+				$this->pdf->setFontSpacing(-0.4);
+			}
+			$this->FrontPage($this->cfg['PagePaddingLeft'], $this->cfg['PagePaddingTop']+16);
+			$this->BackPage($this->cfg['PagePaddingLeft']+90, $this->cfg['PagePaddingTop']+16);
+			$this->BackPage($this->cfg['PagePaddingLeft'], $this->cfg['PagePaddingTop']+125+16+2);
+			if (pll_current_language() == "lt") {
+				$this->pdf->setFontSpacing(-0.4);
+			}
+			$this->FrontPage($this->cfg['PagePaddingLeft']+90, $this->cfg['PagePaddingTop']+125+16+2);
+		}
 
 		$this->pdf->Output('veganpassport.pdf', 'I');
 
@@ -394,7 +415,7 @@ class Passport
 				$this->pdf->Write(1, $value['icon'], null, null, 'L', false, 0, false, false, 0, 0, array());
 				$this->pdf->SetFont($this->cfg['FontBold'], '', 11);
 				$this->pdf->SetTextColor(0,0,0);
-				$this->pdf->SetXY($left+10, $top);
+				$this->pdf->SetXY($left+9, $top);
 				$this->pdf->Write(1, $item[0], null, null, 'L', false, 0, false, false, 0, 0, array());
 				$this->pdf->SetFont($this->cfg['FontItalic'], '', 11);
 				$this->pdf->Write(1, ' '.$item[1], null, null, 'L', false, 0, false, false, 0, 0, array());

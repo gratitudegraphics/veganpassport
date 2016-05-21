@@ -2,7 +2,7 @@
 $type='TrueTypeUnicode';
 $name='TeluguSangamMN';
 $desc=array('Ascent'=>987,'Descent'=>-620,'CapHeight'=>8,'Flags'=>32,'FontBBox'=>'[-1526 -799 1774 987]','ItalicAngle'=>0,'StemV'=>70,'MissingWidth'=>600);
-$up=-162;
+$up=-108;
 $ut=54;
 $dw=600;
 $cw=array(

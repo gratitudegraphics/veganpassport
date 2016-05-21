@@ -511,6 +511,10 @@ pll_register_string('LanguageFontBold', 'LanguageFontBold');
 pll_register_string('LanguageFontRegular', 'LanguageFontRegular');
 pll_register_string('LanguageFontItalic', 'LanguageFontItalic');
 pll_register_string('Polylang-support', 'Polylang-support');
+pll_register_string('Code-help', 'Code-help');
+pll_register_string('Donate', 'Donate');
+
+
 }
 
 function country_code_to_country( $code ){
